@@ -1,0 +1,143 @@
+/* Dashboard.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Use auto-fit and minmax to dynamically adjust columns */
+    grid-auto-rows: minmax(150px, auto); /* Dynamic row height with a minimum of 150px */
+    gap: 10px; /* Spacing between grid items */
+    padding: 10px; /* Padding around the grid */
+    padding-bottom: 100px;
+    max-width: 100%; /* Ensure the grid spans the full width */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+
+.image-item {
+    max-width: 300px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1; /* Maintain square aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.image-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+/* Position the checkbox in the bottom-left corner */
+.image-item input[type="checkbox"] {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Floating buttons for deleting and uploading */
+.floating-button {
+    left: 40px;
+    position: fixed;
+    bottom: 20px;
+    background-color: #dc3545; /* Red for delete button */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.floating-button-logout {
+    left: 40px;
+    position: fixed;
+    top: 20px;
+    background-color: #dc3545; /* Red for delete button */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.floating-button.upload {
+    left: auto;
+    right: 20px; /* Upload button remains on the right */
+    background-color: #28a745; /* Green for upload button */
+}
+
+.floating-button:hover {
+    opacity: 0.8;
+}
+
+.floating-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Loading text */
+p {
+    text-align: center;
+    color: #888;
+}
+
+
+.modal {
+    position: absolute;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
