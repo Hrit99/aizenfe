@@ -7,11 +7,11 @@ services:
     startCommand: npm run preview
     routes:
       - type: rewrite  # Explicitly specifying the route action (rewrite)
-        src: /auth/(.*)
-        dest: http://54.206.124.184:5001/$1
+        source: /auth/(.*)
+        destination: http://54.206.124.184:5001/$1
       - type: rewrite  # Explicitly specifying the route action (rewrite)
-        src: /image/(.*)
-        dest: http://54.206.124.184:5002/$1
+        source: /image/(.*)
+        destination: http://54.206.124.184:5002/$1
       - type: rewrite  # Explicitly specifying the route action (rewrite)
-        src: /llm/(.*)
-        dest: http://54.206.124.184:5003/$1
+        source: /llm/(.*)
+        destination: http://54.206.124.184:5003/$1
