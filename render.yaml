@@ -7,11 +7,11 @@ services:
     staticPublishPath: dist
     routes:
       - type: rewrite  # Explicitly specifying the route action (rewrite)
-        source: /auth/(.*)
-        destination: http://54.206.124.184:5001/$1
+        source: /auth/*
+        destination: http://54.206.124.184:5001/*
       - type: rewrite  # Explicitly specifying the route action (rewrite)
-        source: /image/(.*)
-        destination: http://54.206.124.184:5002/$1
+        source: /image/*
+        destination: http://54.206.124.184:5002/*
       - type: rewrite  # Explicitly specifying the route action (rewrite)
-        source: /llm/(.*)
-        destination: http://54.206.124.184:5003/$1
+        source: /llm/*
+        destination: http://54.206.124.184:5003/*
