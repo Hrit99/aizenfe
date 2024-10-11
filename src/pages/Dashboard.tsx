@@ -76,7 +76,7 @@ const Dashboard: React.FC = () => {
     if (page <= pagelimit) {
       try {
         const token = localStorage.getItem('access_token');
-        const response = await axios.get(`http://54.206.124.184:5002/images?page=${page}&per_page=${perPage}&user_id=${userId}`, {
+        const response = await axios.get(`/image/images?page=${page}&per_page=${perPage}&user_id=${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -114,7 +114,7 @@ const Dashboard: React.FC = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://54.206.124.184:5002/upload', formData, {
+      const response = await axios.post('/image/upload', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
@@ -147,7 +147,7 @@ const Dashboard: React.FC = () => {
 
     try {
       setLoading(true);
-      await axios.delete('http://54.206.124.184:5002/delete_images', {
+      await axios.delete('/image/delete_images', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -190,7 +190,7 @@ const Dashboard: React.FC = () => {
 
     try {
       const token = localStorage.getItem('access_token');
-      const response = await axios.post('http://54.206.124.184:5003/generate-description', { url: url }, {
+      const response = await axios.post('/llm/generate-description', { url: url }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

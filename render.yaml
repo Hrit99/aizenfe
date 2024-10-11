@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: aizenfe
+    env: node
+    plan: free
+    buildCommand: npm install; npm run build
+    startCommand: npm run preview
+    routes:
+      - src: /auth/(.*)
+        dest: http://54.206.124.184:5001/$1
+      - src: /image/(.*)
+        dest: http://54.206.124.184:5002/$1
+      - src: /llm/(.*)
+        dest: http://54.206.124.184:5003/$1

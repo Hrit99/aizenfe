@@ -16,7 +16,7 @@ const Signup: React.FC = () => {
     setSuccess(null);
 
     try {
-      await axios.post('http://54.206.124.184:5001/register', {
+      await axios.post('/auth/register', {
         username,
         password
       });
