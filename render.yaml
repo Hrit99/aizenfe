@@ -1,5 +1,6 @@
 services:
   - type: web
+    runtime: static
     name: aizenfe
     env: node
     plan: free
