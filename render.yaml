@@ -4,7 +4,7 @@ services:
     runtime: static
     buildCommand: npm install && npm run build  # Corrected to use '&&' for chaining commands
     startCommand: npm run preview
-    staticPublishPath: build
+    staticPublishPath: dist
     routes:
       - type: rewrite  # Explicitly specifying the route action (rewrite)
         source: /auth/(.*)
