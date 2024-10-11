@@ -1,9 +1,7 @@
 services:
   - type: web
+    name: aizenfebp
     runtime: static
-    name: aizenfe
-    env: node
-    plan: free
     buildCommand: npm install && npm run build  # Corrected to use '&&' for chaining commands
     startCommand: npm run preview
     routes:
